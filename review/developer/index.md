@@ -1,14 +1,14 @@
-# The CL author's guide to getting through code review
+# O guia do autor de CL para passar pela revisão de código
 
-The pages in this section contain best practices for developers going through
-code review. These guidelines should help you get through reviews faster and
-with higher-quality results. You don't have to read them all, but they are
-intended to apply to every Google developer, and many people have found it
-helpful to read the whole set.
+As páginas desta seção contêm práticas recomendadas para desenvolvedores que
+estão passando pela revisão de código. Essas diretrizes devem ajudá-lo a passar
+por revisões mais rapidamente e com resultados de alta qualidade. Você não
+precisa ler todos eles, mas eles se aplicam a todos os desenvolvedores do
+Google, e muitas pessoas acharam útil ler todo o conjunto.
 
--   [Writing Good CL Descriptions](cl-descriptions.md)
--   [Small CLs](small-cls.md)
--   [How to Handle Reviewer Comments](handling-comments.md)
+-   [Escrevendo boas descrições de CL](cl-descriptions.md)
+-   [Pequenas CLs](small-cls.md)
+-   [Como lidar com comentários de revisores](handling-comments.md)
 
-See also [How to Do a Code Review](../reviewer/), which gives detailed guidance
-for code reviewers.
+Veja também [Como fazer Uma Revisão de Código](../reviewer/), que fornece
+orientações detalhadas para revisores de código.
