@@ -39,7 +39,7 @@ ser muito trabalhoso dividir uma alteração depois que você já tiver escrito 
 exigir muito tempo para discutir por que o revisor deve aceitar sua grande alteração.
 É mais fácil escrever CLs pequenas em primeiro lugar.
 
-## O que é pequeno? {#o-que-e-pequeno}
+## O Que é Pequeno? {#o-que-e-pequeno}
 
 Em geral, o tamanho certo para um CL é **uma alteração independente**. Isso
 significa que:
