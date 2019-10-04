@@ -6,7 +6,7 @@ Quando você envia uma CL para revisão, é provável que o revisor responda com
 vários comentários na sua CL. Aqui estão algumas informações úteis sobre como
 lidar com os comentários dos revisores.
 
-## Não leve para o lado pessoal {#pessoal}
+## Não Leve Para o Lado Pessoal {#pessoal}
 
 O objetivo da revisão é manter a qualidade da nossa base de código e dos nossos
 produtos. Quando um revisor faz uma crítica ao seu código, pense nele como uma
@@ -33,7 +33,7 @@ fizessem de maneira diferente. Se eles também responderem de maneira não
 construtiva a essa discussão particular, ou se não tiver o efeito pretendido,
 encaminhe para o gerente, conforme apropriado.
 
-## Corrigir o código {#codigo}
+## Corrigir o Código {#codigo}
 
 Se um revisor disser que não entende algo no seu código, sua primeira resposta
 deve ser esclarecer o próprio código. Se o código não puder ser esclarecido,
@@ -44,9 +44,9 @@ de revisão de código.
 Se um revisor não entendeu parte do seu código, provavelmente outros leitores do
 código também não entenderão. Escrever uma resposta na ferramenta de revisão de
 código não ajuda futuros leitores de código, mas esclarecer o seu código ou
-adicionar comentários ao código os ajuda.
+adicionar comentários ao código os ajudará.
 
-## Pense por você mesmo {#pense}
+## Pense Por Você Mesmo {#pense}
 
 Escrever uma CL pode exigir muito trabalho. Muitas vezes, é realmente muito bom
 finalmente enviar para revisão, sentir que está pronto e ter certeza de que
@@ -55,7 +55,7 @@ comentários sobre coisas que podem ser aprimoradas, é fácil pensar
 reflexivamente que os comentários estão errados, o revisor está bloqueando você
 desnecessariamente ou eles devem permitir que você envie a sua CL.
 No entanto, **não importa o quão certo você esteja**, neste momento, reserve um
-momento para voltar e considerar se o revisor está fornecendo feedback valioso
+momento para voltar e considerar se o revisor está fornecendo um feedback valioso
 que ajudará a base de código e o Google. Sua primeira pergunta para si mesmo
 deve sempre ser: "O revisor está correto?"
 
@@ -64,7 +64,7 @@ precise esclarecer seus comentários.
 
 Se você *o considerou* e ainda acha que está certo, sinta-se à vontade para
 responder com uma explicação de por que seu método de fazer as coisas é melhor
-para a base de código, os usuários e / ou o Google. Frequentemente, os revisores
+para a base de código, os usuários e/ou o Google. Frequentemente, os revisores
 estão realmente fornecendo *sugestões* e desejam que você pense por si mesmo sobre
 o que é melhor. Você pode realmente saber algo sobre os usuários, base de código
 ou CL que o revisor não conhece. Então, preencha-os; dê a eles mais contexto.
@@ -73,7 +73,7 @@ técnicos.
 
 ## Resolvendo Conflitos {#conflitos}
 
-Seu primeiro passo na resolução de conflitos deve sempre ser tentar chegar a
+Seu primeiro passo na resolução de conflitos deve sempre ser de tentar chegar a
 um consenso com seu revisor. Se você não conseguir obter consenso, consulte
 [Os Padrões da Revisão de Código](../reviewer/standard.md), que fornece os princípios
 a serem seguidos em tal situação.
