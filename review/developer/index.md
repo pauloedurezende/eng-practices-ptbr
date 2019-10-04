@@ -6,9 +6,9 @@ por revisões mais rapidamente e com resultados de alta qualidade. Você não
 precisa ler todos eles, mas eles se aplicam a todos os desenvolvedores do
 Google, e muitas pessoas acharam útil ler todo o conjunto.
 
--   [Escrevendo boas descrições de CL](cl-descriptions.md)
+-   [Escrevendo Boas Descrições de CL](cl-descriptions.md)
 -   [Pequenas CLs](small-cls.md)
--   [Como lidar com comentários de revisores](handling-comments.md)
+-   [Como Lidar Com Comentários de Revisores](handling-comments.md)
 
-Veja também [Como fazer Uma Revisão de Código](../reviewer/), que fornece
+Veja também [Como Fazer Uma Revisão de Código](../reviewer/), que fornece
 orientações detalhadas para revisores de código.
