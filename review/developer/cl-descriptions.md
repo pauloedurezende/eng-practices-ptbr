@@ -2,8 +2,8 @@
 
 
 
-Uma descrição de CL é um registro público de ** que ** mudança está sendo feita
-e ** por que ** foi feita. Ele se tornará parte permanente do nosso histórico
+Uma descrição de CL é um registro público de **qual** mudança está sendo feita
+e **por que** foi feita. Ele se tornará parte permanente do nosso histórico
 de controle de versão e possivelmente será lido por centenas de pessoas, além
 dos seus revisores, ao longo dos anos.
 
@@ -12,19 +12,19 @@ no futuro pode estar procurando sua alteração devido a uma fraca lembrança de
 sua relevância, mas sem os detalhes úteis. Se todas as informações importantes
 estiverem no código e não na descrição, será muito mais difícil localizar o CL.
 
-## Primeira linha {#primeira-linha}
+## Primeira Linha {#primeira-linha}
 
 *   Breve resumo do que está sendo feito.
 *   Frase completa, escrita como se fosse uma ordem.
-*   Siga por uma linha vazia.
+*   Seguida por uma linha vazia.
 
-A **primeira linha** de uma descrição de CL deve ser um breve resumo
-*especificamente* sobre **o que** *está sendo feito pelo CL*, seguido por uma
+A **primeira linha** de uma descrição de CL deve ser um breve resumo relatando
+*especificamente* sobre **o que** *está sendo feito pela CL*, seguido por uma
 linha em branco. Isso é o que a maioria dos futuros pesquisadores de código
 verá quando estiverem navegando no histórico de controle de versão de um trecho
 de código. Portanto, essa primeira linha deve ser informativa o suficiente para
 que eles não precisem ler sua CL ou sua descrição inteira apenas para obter uma
-descrição geral do que o seu CL realmente *fez*.
+descrição geral do que a sua CL realmente *fez*.
 
 Por tradição, a primeira linha de uma descrição de CL é uma sentença completa,
 escrita como se fosse uma ordem (uma sentença imperativa). Por exemplo, diga
@@ -32,7 +32,7 @@ escrita como se fosse uma ordem (uma sentença imperativa). Por exemplo, diga
 \"**Excluindo** o FizzBuzz RPC e **substituindo** pelo novo sistema." Você não
 precisa escrever o restante da descrição como uma sentença imperativa.
 
-## O corpo é informativo {#informativo}
+## O Corpo é Informativo {#informativo}
 
 O restante da descrição deve ser informativo. Pode incluir uma breve descrição
 do problema que está sendo resolvido e por que essa é a melhor abordagem. Se
@@ -43,27 +43,27 @@ links para documentos de design.
 Até CLs pequenas merecem um pouco de atenção aos detalhes. Coloque a CL no
 contexto.
 
-## Descrições incorretas de CL {#ruim}
+## Descrições Incorretas de CL {#ruim}
 
-"Corrigir bug" é uma descrição inadequada do CL. Que bug? O que você fez para
+"Corrigir bug" é uma descrição inadequada de uma CL. Que bug? O que você fez para
 consertar isso? Outras descrições igualmente ruins incluem:
 
 -   "Corrigir build."
 -   "Adicionar patch."
 -   "Movendo código de A para B."
 -   "Fase 1."
--   "Adicionar funções de conveniência."
--   "Mata URLs estranhos."
+-   "Adicionar funções de ajuda."
+-   "Mata URLs estranhas."
 
 Algumas são descrições reais de CL. Seus autores podem acreditar que estão
 fornecendo informações úteis, mas não estão servindo ao objetivo de uma descrição
 de CL.
 
-## Boas descrições de CL {#bom}
+## Boas Descrições de CL {#bom}
 
 Aqui estão alguns exemplos de boas descrições.
 
-### Alteração de funcionalidade
+### Alteração de Funcionalidade
 
 > rpc: remova o limite de tamanho no freelist de mensagens do servidor RPC.
 >
@@ -87,22 +87,17 @@ um pouco mais de informações sobre a implementação específica.
 >
 > Permitir o fornecimento de tarefas Now é um passo em direção a eliminar a
 > dependência do Borglet. Eventualmente, colaboradores que dependem de obter o
-> Now da tarefa deve ser alterado para usar um TimeKeeper diretamente, mas esse
-> foi um acomodação para refatoração em pequenos passos.
+> Now da tarefa deve ser alterado para usar um TimeKeeper diretamente, mas essa
+> foi uma preparação para refatoração em pequenos passos.
 >
 > Continuando o objetivo de longo prazo de refatorar a Hierarquia do Borglet.
 
-The first line describes what the CL does and how this is a change from the
-past. The rest of the description talks about the specific implementation, the
-context of the CL, that the solution isn't ideal, and possible future direction.
-It also explains *why* this change is being made.
-
-A primeira linha descreve o que o CL faz e como isso é uma mudança do passado.
-O restante da descrição fala sobre a implementação específica, o contexto do CL,
+A primeira linha descreve o que a CL faz e como isso é uma mudança do passado.
+O restante da descrição fala sobre a implementação específica, o contexto da CL,
 que a solução não é ideal e possível direção futura. Também explica *por que*
 essa alteração está sendo feita.
 
-### CL pequena que precisa de algum contexto
+### CL Pequena Que Precisa de Algum Contexto
 
 > Crie uma regra de construção Python3 para status.py.
 >
@@ -117,7 +112,7 @@ A primeira frase descreve o que realmente está sendo feito. O restante da
 descrição explica *por que* a alteração está sendo feita e dá ao revisor muito
 contexto.
 
-## Revise a descrição antes de enviar a CL
+## Revise a Descrição Antes de Enviar a CL
 
 As CLs podem sofrer alterações significativas durante a revisão. Pode valer
 a pena revisar uma descrição de CL antes de enviá-la, para garantir que a
