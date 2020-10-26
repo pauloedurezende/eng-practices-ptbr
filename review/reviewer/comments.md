@@ -1,70 +1,69 @@
-# How to write code review comments
+# Como escrever comentários de revisão de código
 
 
+## Sumário
 
-## Summary
+-   Seja gentil.
+-   Explique seu raciocínio.
+-   Equilibre dando orientações explícitas, apenas apontando problemas e
+    deixando o desenvolvedor decidir.
+-   Incentive os desenvolvedores a simplificar o código ou adicionar
+    comentários ao invés de apenas explicar a complexidade para você.
 
--   Be kind.
--   Explain your reasoning.
--   Balance giving explicit directions with just pointing out problems and
-    letting the developer decide.
--   Encourage developers to simplify code or add code comments instead of just
-    explaining the complexity to you.
+## Cortesia
 
-## Courtesy
+Em geral, é importante ser cortês e respeitoso, além de ser muito claro e útil
+para o desenvolvedor cujo código você está revisando. Uma maneira de fazer isso é
+ter certeza de que você está sempre fazendo comentários sobre o *código* e nunca
+fazendo comentários sobre o *desenvolvedor*. Você nem sempre precisa seguir essa
+prática, mas definitivamente deve usá-la ao dizer algo que poderia ser perturbador
+ou controverso. Por exemplo:
 
-In general, it is important to be
-courteous and respectful while also being
-very clear and helpful to the developer whose code you are reviewing. One way to
-do this is to be sure that you are always making comments about the *code* and
-never making comments about the *developer*. You don't always have to follow
-this practice, but you should definitely use it when saying something that might
-otherwise be upsetting or contentious. For example:
+Ruim: "Por que **você** usou as threads aqui quando obviamente não há benefícios
+a serem obtidos com a simultaneidade?"
 
-Bad: "Why did **you** use threads here when there's obviously no benefit to be
-gained from concurrency?"
+Bom: "O modelo de simultaneidade aqui está adicionando complexidade ao sistema
+sem nenhum benefício real de desempenho que eu possa ver. Como não há benefício
+de desempenho, é melhor que esse código seja de uma única thread em vez de usar
+várias threads."
 
-Good: "The concurrency model here is adding complexity to the system without any
-actual performance benefit that I can see. Because there's no performance
-benefit, it's best for this code to be single-threaded instead of using multiple
-threads."
+## Explique o Por Que {#porque}
 
-## Explain Why {#why}
+Uma coisa que você notará sobre o exemplo "bom" acima é que ele ajuda o
+desenvolvedor a entender *por que* você está fazendo seu comentário. Você nem
+sempre precisa incluir essas informações nos comentários da revisão, mas às vezes
+é apropriado dar um pouco mais de explicação sobre sua intenção, a melhor prática
+que você está seguindo ou como sua sugestão melhora a integridade do código.
 
-One thing you'll notice about the "good" example from above is that it helps the
-developer understand *why* you are making your comment. You don't always need to
-include this information in your review comments, but sometimes it's appropriate
-to give a bit more explanation around your intent, the best practice you're
-following, or how your suggestion improves code health.
+## Dê Orientação {#orientacao}
 
-## Giving Guidance {#guidance}
+**Em geral, é responsabilidade do desenvolvedor corrigir uma CL, não o revisor.**
+Você não é obrigado a criar um projeto detalhado de uma solução ou escrever um
+código para o desenvolvedor.
 
-**In general it is the developer's responsibility to fix a CL, not the
-reviewer's.** You are not required to do detailed design of a solution or write
-code for the developer.
+Isso não significa que o revisor deva ser inútil. Em geral, você deve encontrar
+um equilíbrio adequado entre apontar problemas e fornecer orientação direta.
+Apontar problemas e deixar que o desenvolvedor tome uma decisão geralmente ajuda
+o desenvolvedor a aprender e facilita a revisão de código. Também pode resultar
+em uma solução melhor, porque o desenvolvedor está mais próximo do código do que
+o revisor.
 
-This doesn't mean the reviewer should be unhelpful, though. In general you
-should strike an appropriate balance between pointing out problems and providing
-direct guidance. Pointing out problems and letting the developer make a decision
-often helps the developer learn, and makes it easier to do code reviews. It also
-can result in a better solution, because the developer is closer to the code
-than the reviewer is.
+No entanto, às vezes instruções diretas, sugestões ou mesmo códigos são mais úteis.
+O principal objetivo da revisão de código é de obter a melhor CL possível. Um objetivo
+secundário é melhorar as habilidades dos desenvolvedores, para que exijam cada vez
+menos revisões ao longo do tempo.
 
-However, sometimes direct instructions, suggestions, or even code are more
-helpful. The primary goal of code review is to get the best CL possible. A
-secondary goal is improving the skills of developers so that they require less
-and less review over time.
+## Aceitando Explicações {#explicacoes}
 
-## Accepting Explanations {#explanations}
+Se você pedir a um desenvolvedor que explique um pedaço de código que você não
+entende, isso geralmente deve resultar em **reescrever o código mais claramente**.
+Ocasionalmente, adicionar um comentário no código também é uma resposta apropriada,
+desde que não esteja apenas explicando código excessivamente complexo.
 
-If you ask a developer to explain a piece of code that you don't understand,
-that should usually result in them **rewriting the code more clearly**.
-Occasionally, adding a comment in the code is also an appropriate response, as
-long as it's not just explaining overly complex code.
+**As explicações escritas apenas na ferramenta de revisão de código não são úteis
+para futuros leitores de código.** Elas são aceitáveis apenas em algumas
+circunstâncias, como quando você está revendo uma área com a qual não está muito
+familiarizado e o desenvolvedor explica algo normal em que os leitores do código
+já sabiam.
 
-**Explanations written only in the code review tool are not helpful to future
-code readers.** They are acceptable only in a few circumstances, such as when
-you are reviewing an area you are not very familiar with and the developer
-explains something that normal readers of the code would have already known.
-
-Next: [Handling Pushback in Code Reviews](pushback.md)
+Próximo: [Manipulando Pushback em Revisões de Código](pushback.md)
