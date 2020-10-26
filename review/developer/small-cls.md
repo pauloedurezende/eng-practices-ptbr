@@ -1,153 +1,155 @@
-# Small CLs
+# Pequenas CLs
 
 
 
-## Why Write Small CLs? {#why}
+## Por Que Escrever Pequenas CLs? {#porque}
 
-Small, simple CLs are:
+Pequena, simples é a CL:
 
--   **Reviewed more quickly.** It's easier for a reviewer to find five minutes
-    several times to review small CLs than to set aside a 30 minute block to
-    review one large CL.
--   **Reviewed more thoroughly.** With large changes, reviewers and authors tend
-    to get frustrated by large volumes of detailed commentary shifting back and
-    forth—sometimes to the point where important points get missed or dropped.
--   **Less likely to introduce bugs.** Since you're making fewer changes, it's
-    easier for you and your reviewer to reason effectively about the impact of
-    the CL and see if a bug has been introduced.
--   **Less wasted work if they are rejected.** If you write a huge CL and then
-    your reviewer says that the overall direction is wrong, you've wasted a lot
-    of work.
--   **Easier to merge.** Working on a large CL takes a long time, so you will
-    have lots of conflicts when you merge, and you will have to merge
-    frequently.
--   **Easier to design well.** It's a lot easier to polish the design and code
-    health of a small change than it is to refine all the details of a large
-    change.
--   **Less blocking on reviews.** Sending self-contained portions of your
-    overall change allows you to continue coding while you wait for your current
-    CL in review.
--   **Simpler to roll back.** A large CL will more likely touch files that get
-    updated between the initial CL submission and a rollback CL, complicating
-    the rollback (the intermediate CLs will probably need to be rolled back
-    too).
+-   **Revisado mais rapidamente.** É mais fácil para um revisor encontrar cinco
+    minutos várias vezes para revisar CLs pequenas do que reservar um bloco de
+    30 minutos para revisar uma CL grande.
+-   **Revisado mais detalhadamente.** Com grandes alterações, revisores e autores
+    tendem a ficar frustrados com grandes volumes de comentários detalhados
+    mudando de um lado para outro - às vezes até o ponto em que pontos
+    importantes são perdidos ou descartados.
+-   **Menor probabilidade de apresentar bugs.** Como você está fazendo menos
+    alterações, é mais fácil para você e seu revisor pensarem efetivamente sobre
+    o impacto da CL e ver se um bug foi introduzido.
+-   **Menos trabalho desperdiçado se eles forem rejeitados.** Se você escrever uma
+    CL enorme e, em seguida, seu revisor disser que a direção geral está errada,
+    você desperdiçou muito trabalho.
+-   **Mais fácil de mesclar.** Trabalhar em uma CL grande leva muito tempo,
+    portanto você terá muitos conflitos ao mesclar e terá que mesclar com
+    frequência.
+-   **Mais fácil de ser bem projetar.** É muito mais fácil aperfeiçoar o design
+    e codificar a integridade de uma pequena alteração do que refinar todos os
+    detalhes de uma alteração.
+-   **Menos bloqueio nas revisões.** O envio de partes independentes da sua
+    alteração geral permite que você continue a codificar enquanto aguarda sua
+    CL atual na revisão.
+-   **Mais simples de reverter.** É provável que uma CL grande toque em arquivos
+    atualizados entre o envio inicial da CL e uma CL de reversão, complicando a
+    reversão (as CLs intermediárias provavelmente precisarão ser revertidos também).
 
-Note that **reviewers have discretion to reject your change outright for the
-sole reason of it being too large.** Usually they will thank you for your
-contribution but request that you somehow make it into a series of smaller
-changes. It can be a lot of work to split up a change after you've already
-written it, or require lots of time arguing about why the reviewer should accept
-your large change. It's easier to just write small CLs in the first place.
+Observe que os **revisores têm o poder de rejeitar sua alteração imediatamente
+pelo simples fato de ser muito grande.** Geralmente eles agradecem sua contribuição,
+mas solicitam que você faça de alguma forma uma série de alterações menores. Pode
+ser muito trabalhoso dividir uma alteração depois que você já tiver escrito ou
+exigir muito tempo para discutir por que o revisor deve aceitar sua grande alteração.
+É mais fácil escrever CLs pequenas em primeiro lugar.
 
-## What is Small? {#what_is_small}
+## O Que é Pequeno? {#o-que-e-pequeno}
 
-In general, the right size for a CL is **one self-contained change**. This means
-that:
+Em geral, o tamanho certo para um CL é **uma alteração independente**. Isso
+significa que:
 
--   The CL makes a minimal change that addresses **just one thing**. This is
-    usually just one part of a feature, rather than a whole feature at once. In
-    general it's better to err on the side of writing CLs that are too small vs.
-    CLs that are too large. Work with your reviewer to find out what an
-    acceptable size is.
--   Everything the reviewer needs to understand about the CL (except future
-    development) is in the CL, the CL's description, the existing codebase, or a
-    CL they've already reviewed.
--   The system will continue to work well for its users and for the developers
-    after the CL is checked in.
--   The CL is not so small that its implications are difficult to understand. If
-    you add a new API, you should include a usage of the API in the same CL so
-    that reviewers can better understand how the API will be used. This also
-    prevents checking in unused APIs.
+-   O CL faz uma alteração mínima que aborda **apenas uma coisa**. Geralmente,
+    isso é apenas uma parte de um recurso, e não um recurso inteiro de uma só vez.
+    Em geral, é melhor errar ao escrever CLs bem pequenas vs. CLs bem
+    grandes. Trabalhe com seu revisor para descobrir qual é um tamanho aceitável.
+-   Tudo o que o revisor precisa entender sobre a CL (exceto desenvolvimento
+    futuro) está na CL, na descrição da CL, na base de código existente ou em um
+    CL que eles já revisaram.
+-   O sistema continuará funcionando bem para seus usuários e desenvolvedores após
+    a check-in da sua CL.
+-   A CL não é tão pequena a ponto de que suas implicações sejam difíceis de
+    entender. Se você adicionar uma nova API, inclua um uso da API no mesmo CL
+    para que os revisores possam entender melhor como a API será usada. Isso
+    também impede o check-in de APIs não utilizadas.
 
-There are no hard and fast rules about how large is "too large." 100 lines is
-usually a reasonable size for a CL, and 1000 lines is usually too large, but
-it's up to the judgment of your reviewer. The number of files that a change is
-spread across also affects its "size." A 200-line change in one file might be
-okay, but spread across 50 files it would usually be too large.
+Não há regras rígidas e rápidas sobre o seria "grande demais". 100 linhas
+geralmente é um tamanho razoável para uma CL e 1000 linhas geralmente são bem
+grandes, mas depende do julgamento do revisor. O número de arquivos pelos quais
+uma alteração está espalhada também afeta seu "tamanho". Uma alteração de 200
+linhas em um arquivo pode ser boa, mas espalhada por 50 arquivos, geralmente
+seria bem grande.
 
-Keep in mind that although you have been intimately involved with your code from
-the moment you started to write it, the reviewer often has no context. What
-seems like an acceptably-sized CL to you might be overwhelming to your reviewer.
-When in doubt, write CLs that are smaller than you think you need to write.
-Reviewers rarely complain about getting CLs that are too small.
+Lembre-se de que, embora você tenha se envolvido intimamente com seu código desde
+o momento em que começou a escrevê-lo, o revisor geralmente não tem contexto. O
+que parece uma CL de tamanho aceitável para você pode ser esmagador para o seu
+revisor. Em caso de dúvida, escreva CLs menores do que você pensa que precisa. Os
+revisores raramente se queixam de obter CLs pequenas.
 
-## When are Large CLs Okay? {#large_okay}
+## Quando CLs Grandes São Aceitáveis? {#aceitavel}
 
-There are a few situations in which large changes aren't as bad:
+Existem algumas situações em que grandes mudanças não são tão ruins:
 
--   You can usually count deletion of an entire file as being just one line of
-    change, because it doesn't take the reviewer very long to review.
--   Sometimes a large CL has been generated by an automatic refactoring tool
-    that you trust completely, and the reviewer's job is just to sanity check
-    and say that they really do want the change. These CLs can be larger,
-    although some of the caveats from above (such as merging and testing) still
-    apply.
+-   Geralmente, você pode contar com a exclusão de um arquivo inteiro como sendo
+    apenas uma linha de alteração, pois não leva muito tempo para seu revisor
+    revisa-lo.
+-   Às vezes, uma CL grande é gerado por uma ferramenta de refatoração automática
+    em que você confia completamente, e o trabalho do revisor é apenas verificar
+    a integridade e dizer que ele realmente deseja a mudança. Esses CLs podem ser
+    maiores, embora algumas das ressalvas acima (como mesclagem e teste) ainda se
+    apliquem.
 
-### Splitting by Files {#splitting-files}
+### Dividindo por Arquivos {#dividindo-arquivos}
 
-Another way to split up a CL is by groupings of files that will require
-different reviewers but are otherwise self-contained changes.
+Outra maneira de dividir uma CL é por agrupamentos de arquivos que exigirão
+revisores diferentes, mas que são mudanças independentes.
 
-For example: you send off one CL for modifications to a protocol buffer and
-another CL for changes to the code that uses that proto. You have to submit the
-proto CL before the code CL, but they can both be reviewed simultaneously. If
-you do this, you might want to inform both sets of reviewers about the other CL
-that you wrote, so that they have context for your changes.
+Por exemplo: você envia uma CL para modificações em um buffer de protocolo e
+outra CL para alterações no código que usa esse proto. Você deve enviar a CL do proto
+antes da CL de modificações, mas ambos podem ser revisados simultaneamente. Se você
+fizer isso, convém informar os dois conjuntos de revisores sobre a outra CL que
+você escreveu, para que eles tenham contexto para suas alterações.
 
-Another example: you send one CL for a code change and another for the
-configuration or experiment that uses that code; this is easier to roll back
-too, if necessary, as configuration/experiment files are sometimes pushed to
-production faster than code changes.
+Outro exemplo: você envia uma CL para uma alteração no código e outro para a
+configuração ou experiência que usa esse código; também é mais fácil reverter,
+se necessário, pois os arquivos de configuração/experimento às vezes são enviados
+para produção mais rapidamente do que as alterações de código.
 
-## Separate Out Refactorings {#refactoring}
+## Refatorações Separadas {#refatoracao}
 
-It's usually best to do refactorings in a separate CL from feature changes or
-bug fixes. For example, moving and renaming a class should be in a different CL
-from fixing a bug in that class. It is much easier for reviewers to understand
-the changes introduced by each CL when they are separate.
+Geralmente, é melhor fazer refatorações em uma CL separada de alterações de recursos
+ou correções de erros. Por exemplo, mover e renomear uma classe deve estar em um CL
+diferente da correção de um bug referente a esta classe. É muito mais fácil para os
+revisores entenderem as alterações introduzidas por cada CL quando estão separadas.
 
-Small cleanups such as fixing a local variable name can be included inside of a
-feature change or bug fix CL, though. It's up to the judgment of developers and
-reviewers to decide when a refactoring is so large that it will make the review
-more difficult if included in your current CL.
+Pequenas limpezas, como a fixação de um nome de variável local, podem ser incluídas
+dentro de uma alteração de recurso ou uma CL de correção de bug. Depende do julgamento
+dos desenvolvedores e revisores decidir quando uma refatoração é tão grande que
+dificultará a revisão se incluída na CL atual.
 
-## Keep related test code in the same CL {#test_code}
+## Mantenha o Código de Teste Relacionado na Mesma CL {#codigo-de-testes}
 
-Avoid splitting test code into a separate CL. Tests validating your code
-modifications should go into the same CL, even if it increases the code line
-count.
+Evite dividir o código de teste em uma CL separada. Os testes que validam suas
+modificações de código devem ser inseridos na mesma CL, mesmo se aumentar a contagem
+de linhas de código.
 
-However, <i>independent</i> test modifications can go into separate CLs first,
-similar to the [refactorings guidelines](#refactoring). That includes:
+No entanto, modificações de teste <i>independentes</i> podem entrar primeiro em CLs
+separadas, semelhante às diretrizes de refatoração. Isso inclui:
 
-*   validating pre-existing, submitted code with new tests.
-*   refactoring the test code (e.g. introduce helper functions).
-*   introducing larger test framework code (e.g. an integration test).
+*   validando código pré-existente enviado com novos testes.
+*   refatorar o código de teste (por exemplo, introduzir funções auxiliares).
+*   introdução de um código de estrutura de teste maior (por exemplo, um teste de
+    integração).
 
-## Don't Break the Build {#break}
+## Não Quebre a Compilação {#quebrar}
 
-If you have several CLs that depend on each other, you need to find a way to
-make sure the whole system keeps working after each CL is submitted. Otherwise
-you might break the build for all your fellow developers for a few minutes
-between your CL submissions (or even longer if something goes wrong unexpectedly
-with your later CL submissions).
+Se você tiver várias CLs que dependem uma da outra, precisará encontrar uma maneira
+de garantir que todo o sistema continue funcionando após o envio de cada CL. Caso
+contrário, você poderá interromper a compilação de todos os seus colegas desenvolvedores
+por alguns minutos entre os envios de CL (ou ainda mais, se algo der errado
+inesperadamente com os envios posteriores de CL).
 
-## Can't Make it Small Enough {#cant}
+## Não Pode Ser Mais Pequeno o Suficiente {#nao-pode}
 
-Sometimes you will encounter situations where it seems like your CL *has* to be
-large. This is very rarely true. Authors who practice writing small CLs can
-almost always find a way to decompose functionality into a series of small
-changes.
+Às vezes, você encontrará situações em que sua CL *precisa* ser grande. Isso
+raramente é verdade. Os autores que praticam a escrita de CLs pequenos quase
+sempre conseguem encontrar uma maneira de decompor a funcionalidade em uma
+série de pequenas alterações.
 
-Before writing a large CL, consider whether preceding it with a refactoring-only
-CL could pave the way for a cleaner implementation. Talk to your teammates and
-see if anybody has thoughts on how to implement the functionality in small CLs
-instead.
+Antes de escrever uma CL grande, considere precedê-lo com uma CL somente para
+refatoração onde poderia preparar o caminho para uma implementação mais limpa.
+Converse com seus colegas de equipe e veja se alguém pensa em como implementar
+a funcionalidade em pequenas CLs.
 
-If all of these options fail (which should be extremely rare) then get consent
-from your reviewers in advance to review a large CL, so they are warned about
-what is coming. In this situation, expect to be going through the review process
-for a long time, be vigilant about not introducing bugs, and be extra diligent
-about writing tests.
+Se todas essas opções falharem (o que deve ser extremamente raro), obtenha o
+consentimento dos revisores com antecedência para revisar uma CL grande, para que
+sejam avisados sobre o que está por vir. Nessa situação, espere passar pelo
+processo de revisão por um longo tempo, fique atento a não introduzir bugs e seja
+mais diligente em escrever testes.
 
-Next: [How to Handle Reviewer Comments](handling-comments.md)
+Próximo: [Como Lidar Com Comentários de Revisores](handling-comments.md)

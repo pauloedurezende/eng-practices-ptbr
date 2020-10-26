@@ -1,33 +1,34 @@
-# Google Engineering Practices Documentation
+# Documentação sobre práticas de engenharia do Google
 
-Google has many generalized engineering practices that cover all languages and
-all projects. These documents represent our collective experience of various
-best practices that we have developed over time. It is possible that open source
-projects or other organizations would benefit from this knowledge, so we work to
-make it available publicly when possible.
+O Google possui muitas práticas de engenharia generalizadas que cobrem todas as
+linguagens e projetos. Este documento representa nossa experiência coletiva sobre
+as várias melhores práticas recomendadas que desenvolvemos ao decorrer do tempo.
+É possível que projetos de código aberto ou outras organizações possam se beneficiar
+deste conhecimento, portanto estamos trabalhando para disponibiliza-lo publicamente
+assim que possível.
 
-Currently this contains the following documents:
+Atualmente, este projeto contém os seguintes documentos:
 
-*   [Google's Code Review Guidelines](review/index.md), which are actually two
-    separate sets of documents:
-    *   [The Code Reviewer's Guide](review/reviewer/index.md)
-    *   [The Change Author's Guide](review/developer/index.md)
+*   [Diretrizes de revisão de código do Google](review/index.md), que na verdade são
+    dois conjuntos separados de documentos:
+    *   [O Guia do Revisor de Código](review/reviewer/index.md)
+    *   [Guia de Mudanças do Autor](review/developer/index.md)
 
-## Terminology
+## Vocabulário
 
-There is some Google-internal terminology used in some of these documents, which
-we clarify here for external readers:
+Há alguns vocabulários internos que o Google utiliza em alguns desses documentos,
+que esclarecemos aqui para leitores externos:
 
-*   **CL**: Stands for "changelist," which means one self-contained change that
-    has been submitted to version control or which is undergoing code review.
-    Other organizations often call this a "change" or a "patch."
-*   **LGTM**: Means "Looks Good to Me." It is what a code reviewer says when
-    approving a CL.
+*   **CL**: Acrônimo para "changelist", significa que uma alteração independente
+    que foi enviada ao controle de versão ou que está passando por revisão de código.
+    Outras organizações costumam chamar isso de "change" ou de "patch".
+*   **LGTM**: Acrônimo para "Parece Bom para Mim", é o que um revisor de código diz
+    ao aprovar uma CL.
 
-## License
+## Licença
 
-The documents in this project are licensed under the CC-By 3.0 License, which
-encourages you to share these documents. See
-<https://creativecommons.org/licenses/by/3.0/> for more details.
+Os documentos deste projeto são licenciados sob a licença CC-By 3.0, que
+incentiva você a compartilhar esses documentos. Veja
+<https://creativecommons.org/licenses/by/3.0/> para obter mais detalhes.
 
-<a rel="license" href="https://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
+<a rel="license" href="https://creativecommons.org/licenses/by/3.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
